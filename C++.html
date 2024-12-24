@@ -1,0 +1,225 @@
+#include <iostream>
+    #include <string>
+    #include <cstdlib> // For system("cls")
+    using namespace std;
+    
+    // ASCII value for box character
+    int ascii = 178, countBooks = 0; // `countBooks` keeps track of the total books
+    char ch = ascii;
+    
+    // Structure to store book details
+    struct Bookshop {
+        int id;          // Book ID
+        float price;     // Book price
+        string name;     // Book name
+        string a_name;   // Author name
+        string p_name;   // Publisher name
+    } B[25];             // Array to hold up to 25 books
+    
+    // Function to display heading
+    void Heading() {
+        cout << "\n";
+        for (int n = 1; n <= 26; n++)
+            cout << ch; // Print decorative line
+        cout << " BOOK SHOP PROJECT IN C++ ";
+        for (int n = 1; n <= 26; n++)
+            cout << ch; // Print decorative line
+        cout << "\n";
+    }
+    
+    // Function to insert a new book
+    void Insert() {
+        system("cls");  // Clear the screen
+        Heading();      // Display heading
+        cout << "\n\n ENTER BOOK ID -> ";
+        cin >> B[countBooks].id;   // Input book ID
+        cin.ignore();              // Clear input buffer
+        cout << "\n\n ENTER BOOK NAME -> ";
+        getline(cin, B[countBooks].name); // Input book name
+        cout << "\n\n ENTER AUTHOR NAME -> ";
+        getline(cin, B[countBooks].a_name); // Input author name
+        cout << "\n\n ENTER BOOK PUBLISHER NAME -> ";
+        getline(cin, B[countBooks].p_name); // Input publisher name
+        cout << "\n\n ENTER BOOK PRICE -> ";
+        cin >> B[countBooks].price;  // Input book price
+        countBooks++;                // Increment total books
+        cout << "\n\n\n" << ch << ch << " INSERT NEW BOOK SUCCESSFULLY " << ch << ch;
+    }
+    
+    // Function to search for a book by ID
+    void Search() {
+        system("cls");  // Clear the screen
+        Heading();      // Display heading
+        if (countBooks == 0) {
+            // If no books are available
+            cout << "\n\n\n" << ch << ch << " STRUCTURE IS EMPTY " << ch << ch;
+            return;
+        }
+    
+        int t_id, found = 0; // Variables for search
+        cout << "\n\n ENTER BOOK ID FOR SEARCH -> ";
+        cin >> t_id;
+        for (int a = 0; a < countBooks; a++) {
+            if (t_id == B[a].id) { // If book ID matches
+                cout << "\n\n BOOK ID -> " << B[a].id;
+                cout << "\n\n BOOK NAME -> " << B[a].name;
+                cout << "\n\n AUTHOR NAME -> " << B[a].a_name;
+                cout << "\n\n PUBLISHER NAME -> " << B[a].p_name;
+                cout << "\n\n BOOK PRICE -> " << B[a].price;
+                found = 1; // Mark book as found
+                break;
+            }
+        }
+    
+        if (found == 0) {
+            // If book not found
+            cout << "\n\n\n" << ch << ch << " BOOK NOT FOUND " << ch << ch;
+        }
+    }
+    
+    // Function to update book details
+    void Update() {
+        system("cls");  // Clear the screen
+        Heading();      // Display heading
+        if (countBooks == 0) {
+            // If no books are available
+            cout << "\n\n\n" << ch << ch << " STRUCTURE IS EMPTY " << ch << ch;
+            return;
+        }
+    
+        int t_id, found = 0; // Variables for search
+        cout << "\n\n ENTER BOOK ID FOR UPDATE -> ";
+        cin >> t_id;
+    
+        for (int a = 0; a < countBooks; a++) {
+            if (t_id == B[a].id) { // If book ID matches
+                cout << "\n\n ENTER NEW BOOK ID -> ";
+                cin >> B[a].id;
+                cin.ignore(); // Clear input buffer
+                cout << "\n\n ENTER NEW BOOK NAME -> ";
+                getline(cin, B[a].name);
+                cout << "\n\n ENTER NEW AUTHOR NAME -> ";
+                getline(cin, B[a].a_name);
+                cout << "\n\n ENTER NEW PUBLISHER NAME -> ";
+                getline(cin, B[a].p_name);
+                cout << "\n\n ENTER NEW BOOK PRICE -> ";
+                cin >> B[a].price;
+    
+                cout << "\n\n\n" << ch << ch << " BOOK UPDATED SUCCESSFULLY " << ch << ch;
+                found = 1; // Mark book as found
+                break;
+            }
+        }
+    
+        if (found == 0) {
+            // If book not found
+            cout << "\n\n\n" << ch << ch << " BOOK NOT FOUND " << ch << ch;
+        }
+    }
+    
+    // Function to delete a book
+    void Delete() {
+        system("cls");  // Clear the screen
+        Heading();      // Display heading
+        if (countBooks == 0) {
+            // If no books are available
+            cout << "\n\n\n" << ch << ch << " STRUCTURE IS EMPTY " << ch << ch;
+            return;
+        }
+    
+        int t_id, found = 0; // Variables for search
+        cout << "\n\n ENTER BOOK ID FOR DELETE -> ";
+        cin >> t_id;
+    
+        for (int a = 0; a < countBooks; a++) {
+            if (t_id == B[a].id) { // If book ID matches
+                for (int k = a; k < countBooks - 1; k++) {
+                    // Shift all books after the deleted book
+                    B[k] = B[k + 1];
+                }
+                countBooks--; // Decrement total books
+                cout << "\n\n\n" << ch << ch << " BOOK DELETED SUCCESSFULLY " << ch << ch;
+                found = 1; // Mark book as deleted
+                break;
+            }
+        }
+    
+        if (found == 0) {
+            // If book not found
+            cout << "\n\n\n" << ch << ch << " BOOK NOT FOUND " << ch << ch;
+        }
+    }
+    
+    // Function to display all books
+    void Show() {
+        system("cls");  // Clear the screen
+        Heading();      // Display heading
+        if (countBooks == 0) {
+            // If no books are available
+            cout << "\n\n\n" << ch << ch << " STRUCTURE IS EMPTY " << ch << ch;
+            return;
+        }
+    
+        for (int a = 0; a < countBooks; a++) {
+            cout << "\n\n BOOK ID -> " << B[a].id;
+            cout << "\n\n BOOK NAME -> " << B[a].name;
+            cout << "\n\n AUTHOR NAME -> " << B[a].a_name;
+            cout << "\n\n PUBLISHER NAME -> " << B[a].p_name;
+            cout << "\n\n BOOK PRICE -> " << B[a].price << "\n\n";
+            for (int n = 1; n <= 26; n++)
+                cout << ch; // Print decorative line
+            cout << "\n";
+        }
+    }
+    
+    // Main function
+    int main() {
+        while (true) {
+            system("cls"); // Clear the screen
+            Heading();     // Display heading
+    
+            // Display menu options
+            cout << "\n\n " << ch << ch << " 1. INSERT BOOK";
+            cout << "\n\n " << ch << ch << " 2. SEARCH BOOK";
+            cout << "\n\n " << ch << ch << " 3. UPDATE BOOK";
+            cout << "\n\n " << ch << ch << " 4. DELETE BOOK";
+            cout << "\n\n " << ch << ch << " 5. SHOW ALL BOOKS";
+            cout << "\n\n " << ch << ch << " 6. EXIT\n\n";
+    
+            for (int n = 1; n <= 26; n++)
+                cout << ch; // Print decorative line
+            cout << "\n\n" << ch << ch << " ENTER YOUR CHOICE -> ";
+            int choice;
+            cin >> choice;
+    
+            // Switch case to handle menu options
+            switch (choice) {
+                case 1:
+                    Insert();
+                    break;
+                case 2:
+                    Search();
+                    break;
+                case 3:
+                    Update();
+                    break;
+                case 4:
+                    Delete();
+                    break;
+                case 5:
+                    Show();
+                    break;
+                case 6:
+                    exit(0); // Exit the program
+                default:
+                    cout << "\n\n" << ch << ch << " PLEASE SELECT CORRECT OPTION " << ch << ch;
+            }
+    
+            cout << "\n\n Press any key to return to the menu...";
+            cin.ignore();
+            cin.get();
+        }
+    
+        return 0;
+    }
+    

@@ -1,0 +1,173 @@
+BACHELOR OF INFORMATION TECHNOLOGY
+
+
+
+
+JANAKPUR COMMUNITY COLLEGE
+JANAKPURDHAM-08, RAMANAND CHOWK
+ DHANUSHA, NEPAL
+(Affiliated to Purbanchal University)
+
+A PROJECT REPORT 
+ON
+"CALENDAR"
+Submitted in Partial Fulfillment of the Requirement of the 1st Semester
+
+SUBMITTED BY: 
+
+
+
+
+
+UNDER THE SUPERVISION OF 
+Er. Ajay Shah 
+
+
+
+April 2024
+
+
+
+
+
+ 
+DECLARATION
+
+We hereby certify that the project entitled “Bookshop Management System” project using with C++” by Hariom yadav, Shaksheker sha, Kameshwor Yadav and Aalok kumar Yadav. On partial fulfilment for the award of course Bachelor of Information Technology. Submitted in department of BIT at JANAKPUR COMMUNITY COLLEGE, Ramanand chowk (Janakpur-8) under PURBANCHAL UNIVERSITY is an authentic record of our work carried out under supervision of AJAY Shah Sir.
+This is to certify that the above statement made by the candidate is correct to best of knowledge by HOD of BIT department Mr. Ajay Shah.
+ 
+ACKNOWLEDGEMENT 
+We are highly grateful to Ajay Shah sir of JCC for providing this opportunity of MINOR PROJECT and report on “Bookshop Management System” using C programming", we should like to express our gratitude to other faculty member of BIT department of JANAKPUR COMMUNITY COLLEGE for providing academic input, guidance & encouragement throughout minor project period. The author would like to express the deep sense of gratitude and report on “Bookshop Management System” using C++ programming", we should like to express our gratitude to other faculty member of BIT department of JANAKPUR COMMUNITY COLLEGE for providing academic input, guidance & encouragement throughout minor project period. The author would like to express the deep sense of gratitude and thanks to AJAY SHAH sir as a project guider of C++ programming without whose permission wise council & avail guidance, it has not been possible to pursue our minor project in this manner. Finally, we express our indebtedness to all who have directly or indirectly contributed to successful completion of our project- I report.
+ 
+ABSTRACT 
+The objective of this project is to let the students apply the programming knowledge in real- world situation/problem and exposed the students how programming skills helps in developing a good software.
+Write programs utilizing modern software tools.
+Apply object-oriented programming principles effectively when developing small to medium sized projects.
+Write effective procedural code to solve small to medium sized problems.
+Students will demonstrate a breadth of knowledge in Information Technology, as exemplified in the areas of systems, theory and software development.
+Students will demonstrate ability to conduct a research or applied Information Technology project, requiring writing and presentation skills which exemplify scholarly style in Information technology programming 
+ 
+TABLE OF CONTENT 
+
+S.N.	Topic	Page
+1.	Declaration	
+2.	Acknowledgment 	
+3.	Abstract	
+4.	Introduction	
+5.	Objectives	
+6.	Scope
+	
+7.	Key Features
+	
+8.	System Design
+	
+9.	Implementation
+	
+10.	Testing and Results
+	
+11.	Limitations
+	
+12.	Conclusion
+	
+13	Future Enhancements
+	
+14	References
+	
+ 
+Introduction
+The Bookshop Management System is a simple console-based application developed in C++. It aims to help manage the records of books in a bookshop, including adding new books, searching for existing books, updating book details, deleting books, and displaying all available books. The application is designed to provide a user-friendly interface for easy management of book records.
+Project purpose 
+1  Automation of Book Management:
+•	Efficient Data Handling: Automate the process of adding, searching, updating, deleting, and displaying book records to minimize manual effort and reduce the chances of errors.
+2  Improved Accuracy and Reliability:
+•	Consistent Record Keeping: Ensure that all book details are accurately recorded and consistently maintained, eliminating discrepancies that often occur with manual record-keeping.
+3  Enhanced User Experience:
+•	User-Friendly Interface: Create a simple and intuitive console-based user interface that allows bookshop staff to interact with the system effortlessly.
+4  Scalability and Flexibility:
+•	Expandable Inventory: Design the system to handle up to 25 books, allowing small to medium-sized bookshops to manage their inventory effectively.
+
+
+Objective
+1.  To create a system that can store details of up to 25 books.
+2.  To allow the user to add new books to the system.
+3.  To provide functionality to search for books by their ID.
+4.  To enable updating the details of existing books.
+5.  To allow deletion of books from the system.
+6.  To display a list of all books in the system.
+
+
+
+
+
+
+
+
+Scope
+•	Manage book inventory for small to medium-sized bookshops.
+•	Store and manipulate book details such as ID, name, author, publisher, and price.
+•	Allow bookshop staff to perform operations like insertion, search, update, deletes and display.
+•	Enhance operational efficiency by automating manual tasks.
+•	Provide a user-friendly console-based interface.
+
+
+
+
+Key Features
+•	Insert Book: Add new books to the inventory with details like ID, name, author, publisher, and price.
+•	Search Book: Find books by their unique ID and display their details.
+•	Update Book: Modify existing book records using the book ID.
+•	Delete Book: Remove books from the inventory using the book ID.
+•	Show All Books: Display details of all books currently in the inventory.
+•	Clear Screen: Clear the console screen to maintain a clean interface.
+•	Error Handling: Prompt users for correct input when invalid options are selected.
+
+
+System Design
+•	Data Structure: Use a struct to define the book attributes.
+•	Array Storage: Store up to 25 books in an array of structs.
+•	Console Interface: Implement a console-based interface for user interactions.
+•	Functions: Define functions for each operation (Insert, Search, Update, Delete, Show).
+•	Menu-Driven: Use a loop to continuously display a menu for user selection and handle inputs accordingly.
+
+Implementation
+	Language: Implemented in C++.
+	Libraries: Utilizes standard libraries such as <iostream>, <string>, and <cstdlib>.
+	Functions:
+o	Heading(): Displays the heading and decorative lines.
+o	Insert(): Handles book insertion.
+o	Search(): Handles book search by ID.
+o	Update(): Handles updating book details.
+o	Delete(): Handles deleting books by ID.
+o	Show(): Displays all books.
+	Main Loop: The main function contains a loop to handle user inputs and call appropriate functions.																								  																									 Testing and Results																
+	Functional Testing: Each feature (Insert, Search, Update, Delete, Show) was tested individually to ensure correct functionality.
+	Boundary Testing: Tested for edge cases such as searching for non-existent books, deleting from an empty inventory, and updating books with incorrect IDs.
+	User Testing: Conducted user testing to ensure the interface is intuitive and the system performs expected operations efficiently.
+	Results: The system successfully handled book management tasks as per requirements, demonstrating robustness and reliability.
+	
+
+
+
+
+Limitations
+•	Fixed Inventory Size: Limited to managing a maximum of 25 books, which may not suffice for larger bookshops.
+•	Console-Based: Lacks a graphical user interface (GUI), which might be less appealing to some users.
+•	Basic Error Handling: Limited error handling and validation, especially for incorrect data types during input.
+Conclusion
+The Bookshop Management System efficiently manages book inventory through a user-friendly console interface. It automates various book management tasks, thereby enhancing operational efficiency and accuracy. While the system meets its primary objectives, certain limitations such as fixed inventory size and lack of a GUI are noted.	
+Future Enhancements
+•	Expand Inventory: Increase the capacity to handle more books.
+•	GUI Development: Develop a graphical user interface to improve user experience.
+•	Database Integration: Integrate a database for persistent storage and better data management.
+•	Advanced Search: Implement advanced search features, such as searching by author or publisher.
+•	Enhanced Error Handling: Improve validation and error handling mechanisms. 																																																																																						
+References
+•	C++ Programming by Bjarne Stroustrup.
+•	The C++ Standard Library: A Tutorial and Reference by Nicolai M. Josuttis.
+•	Data Structures and Algorithms in C++ by Adam Drozdek.
+•	Official C++ Documentation: https://en.cppreference.com
+•	C++ for Dummies by Stephen R. Davis.
+
+ 
+								
+
